@@ -1,1 +1,2 @@
-export { HumidityResource, TemperatureResource } from './API';
+import * as API from './API';
+export { API };

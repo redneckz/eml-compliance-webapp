@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Section, SectionKind, Button, ButtonKind, IconButton, IconButtonKind, IconPath } from '../modules';
+import { ReportIcon } from '../icons';
+import { Section, SectionKind, Button, ButtonKind, IconButton, IconButtonKind } from '../modules';
 
 export function ComplianceTestBar() {
   const handleTest = React.useCallback(() => console.log('handleTest'), []);
@@ -10,7 +11,7 @@ export function ComplianceTestBar() {
         <Button kind={ButtonKind.Emp} onClick={handleTest}>
           Test
         </Button>
-        <IconButton kind={IconButtonKind.Emp} w={32} path={IconPath.Report} onClick={handleRunReport} />
+        <IconButton kind={IconButtonKind.Emp} icon={<ReportIcon w={32} />} onClick={handleRunReport} />
       </div>
     </Section>
   );

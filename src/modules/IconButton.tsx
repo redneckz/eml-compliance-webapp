@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Icon, IconPath } from './Icon';
+import { Icon } from '../icons';
 
 export enum IconButtonKind {
   Odd = 'odd',
@@ -16,22 +16,19 @@ const BUTTON_STYLES_MAP: { [key in IconButtonKind]: string } = {
 };
 
 interface IconButtonProps {
+  className?: string;
   kind?: IconButtonKind;
-  w?: number;
-  h?: number;
-  path: IconPath;
+  icon: React.ReactElement<React.ComponentProps<typeof Icon>, typeof Icon>;
+  disabled?: boolean;
   onClick: () => any;
 }
 
-export function IconButton({ w, h, kind = IconButtonKind.Odd, path, onClick }: IconButtonProps) {
-  return (
-    <Icon
-      className={['block', 'cursor-pointer', BUTTON_STYLES_MAP[kind]].join(' ')}
-      role="button"
-      w={w}
-      h={h}
-      path={path}
-      onClick={onClick}
-    />
-  );
+export function IconButton({ className, kind = IconButtonKind.Odd, icon, disabled, onClick }: IconButtonProps) {
+  const disabledClassName = disabled ? 'opacity-50 cursor-wait' : 'cursor-pointer';
+  return React.cloneElement(icon, {
+    className: ['block', disabledClassName, BUTTON_STYLES_MAP[kind], className].filter(Boolean).join(' '),
+    role: 'button',
+    'aria-disabled': disabled ? 'true' : undefined,
+    onClick: disabled ? undefined : onClick
+  });
 }

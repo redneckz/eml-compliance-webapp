@@ -1,15 +1,31 @@
 import * as React from 'react';
-import { Section, SectionKind, Icon, IconPath } from '../modules';
+import { API } from '../API';
+import { useDataPolling } from '../modules';
+import { EmergencyAudioAlertSection } from './EmergencyAudioAlertSection';
+
+const DATA_POLLING_TIMEOUT = 60 * 1000;
 
 export function EmergencyAudioAlertBar() {
+  const fetchAudioAlerts = React.useCallback(() => API.AudioAlertResource.getAll('Alerts'), []);
+  const alerts = useDataPolling(fetchAudioAlerts, DATA_POLLING_TIMEOUT);
+  const [toggledAlert, setToggledAlert] = React.useState<API.AlertKind>();
+  const [loading, setLoading] = React.useState<boolean>();
+  const handleToggle = async (alert: API.AlertKind) => {
+    setToggledAlert(alert);
+    setLoading(true);
+    try {
+      const active = await API.toggleAudioAlert(alert);
+      setToggledAlert(active ? alert : undefined);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
-    <Section title="Emergency Audio Alert" kind={SectionKind.Odd}>
-      <div className="flex flex-no-wrap">
-        <Icon className="mr-4" w={32} path={IconPath.Warn} />
-        <Icon className="mr-4" w={32} path={IconPath.Fire} />
-        <Icon className="mr-4" w={32} path={IconPath.Weather} />
-        <Icon w={32} path={IconPath.Gun} />
-      </div>
-    </Section>
+    <EmergencyAudioAlertSection
+      toggledAlert={toggledAlert}
+      alerts={alerts ? alerts.map(({ Number: kind }) => kind) : []}
+      loading={loading}
+      onToggle={handleToggle}
+    />
   );
 }
