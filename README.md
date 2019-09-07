@@ -1,3 +1,8 @@
+# EML Compliance Webapp
+
+[![Build Status][build-image]][build-url]
+[![Release][release-image]][release-url]
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +71,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+[build-image]: https://cloud.drone.io/api/badges/redneckz/eml-compliance-webapp/status.svg
+[build-url]: https://cloud.drone.io/redneckz/eml-compliance-webapp
+[release-image]: https://img.shields.io/github/v/tag/redneckz/eml-compliance-webapp
+[release-url]: https://github.com/redneckz/eml-compliance-webapp/releases
