@@ -27,8 +27,11 @@ export function Section({ kind, title, children }: SectionProps) {
         'flex-no-wrap',
         'items-center',
         'border-l-4',
-        'p-4',
+        'pl-2',
+        'pr-2',
         'h-12',
+        'md:pl-4',
+        'md:pr-4',
         'font-mono',
         SECTION_STYLES_MAP[kind]
       ].join(' ')}

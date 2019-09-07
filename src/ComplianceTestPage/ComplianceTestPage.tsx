@@ -13,7 +13,7 @@ export function ComplianceTestPage() {
       testBar={<ComplianceTestBar />}
       alertBar={<EmergencyAudioAlertBar />}
       motionBar={<SecurityAndMotionBar />}
-      floorPlan={<FloorPlan />}
+      floorPlan={<FloorPlan h="calc(100vh - 5 * 3rem - 2px)" preserveAspectRatio="xMidYMin" />}
       humidityBar={<HumidityBar />}
       temperatureBar={<TemperatureBar />}
     />

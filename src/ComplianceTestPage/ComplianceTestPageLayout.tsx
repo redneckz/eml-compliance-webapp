@@ -27,11 +27,7 @@ export function ComplianceTestPageLayout({
           <div className="w-full md:w-1/2">{motionBar}</div>
         </div>
       }
-      body={
-        <div className="w-full h-full flex items-stretch overflow-auto border-t border-b border-gray-500">
-          {floorPlan}
-        </div>
-      }
+      body={floorPlan}
       footer={
         <div className="flex flex-wrap">
           <div className="w-full md:w-1/2">{humidityBar}</div>

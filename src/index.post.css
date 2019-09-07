@@ -1,7 +1,7 @@
 html,
 body,
 #root {
-  @apply w-screen h-screen;
+  @apply w-screen h-screen overflow-x-hidden;
 }
 
 @tailwind base;
