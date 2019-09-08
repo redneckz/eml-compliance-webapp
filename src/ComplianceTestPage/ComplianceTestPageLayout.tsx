@@ -23,8 +23,8 @@ export function ComplianceTestPageLayout({
       header={
         <div className="flex flex-wrap">
           <div className="w-full">{testBar}</div>
-          <div className="w-full md:w-1/2">{alertBar}</div>
-          <div className="w-full md:w-1/2">{motionBar}</div>
+          <div className="w-full">{alertBar}</div>
+          <div className="w-full">{motionBar}</div>
         </div>
       }
       body={floorPlan}
