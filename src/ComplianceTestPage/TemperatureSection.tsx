@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { API } from '../API';
+import * as Domain from '../Domain';
 import { Section, SectionKind } from '../modules';
 import { LastAnomalySection } from './LastAnomalySection';
 
-export function TemperatureSection({ temperature }: { temperature?: API.Temperature }) {
+export function TemperatureSection({ temperature }: { temperature?: Domain.Temperature }) {
   return (
     <Section title="Temperature" kind={SectionKind.Misc}>
       {temperature ? renderTemperature(temperature) : ''}
@@ -11,7 +11,7 @@ export function TemperatureSection({ temperature }: { temperature?: API.Temperat
   );
 }
 
-function renderTemperature(temperature: API.Temperature) {
+function renderTemperature(temperature: Domain.Temperature) {
   return (
     <div className="flex flex-no-wrap justify-between items-center">
       <div>

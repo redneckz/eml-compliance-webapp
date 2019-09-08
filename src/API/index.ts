@@ -1,2 +1,5 @@
-import * as API from './API';
-export { API };
+export { DeviceResource, runTest } from './DeviceResource';
+export { AudioAlertResource, toggleAudioAlert } from './AudioAlertResource';
+export { MotionResource } from './MotionResource';
+export { HumidityResource } from './HumidityResource';
+export { TemperatureResource } from './TemperatureResource';

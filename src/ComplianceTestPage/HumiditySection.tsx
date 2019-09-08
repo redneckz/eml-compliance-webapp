@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { API } from '../API';
+import * as Domain from '../Domain';
 import { Section, SectionKind } from '../modules';
 import { LastAnomalySection } from './LastAnomalySection';
 
-export function HumiditySection({ humidity }: { humidity?: API.Humidity }) {
+export function HumiditySection({ humidity }: { humidity?: Domain.Humidity }) {
   return (
     <Section title="Humidity" kind={SectionKind.Even}>
       {humidity ? renderHumidity(humidity) : ''}
@@ -11,7 +11,7 @@ export function HumiditySection({ humidity }: { humidity?: API.Humidity }) {
   );
 }
 
-function renderHumidity(humidity: API.Humidity) {
+function renderHumidity(humidity: Domain.Humidity) {
   return (
     <div className="flex flex-no-wrap justify-between items-center">
       <div>
