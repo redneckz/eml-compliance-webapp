@@ -15,22 +15,27 @@ const BUTTON_STYLES_MAP: { [key in ButtonKind]: string } = {
 };
 
 interface ButtonProps extends JSX.ElementChildrenAttribute {
+  className?: string;
   kind?: ButtonKind;
+  disabled?: boolean;
   onClick: () => any;
 }
 
-export function Button({ kind = ButtonKind.Odd, onClick, children }: ButtonProps) {
+export function Button({ className, kind = ButtonKind.Odd, disabled, onClick, children }: ButtonProps) {
+  const disabledClassName = disabled ? 'opacity-50 cursor-wait' : 'cursor-pointer';
   return (
     <button
       className={[
+        'flex flex-no-wrap items-center justify-center',
         'bg-transparent',
         'font-semibold',
-        'py-1',
-        'px-4',
+        'py-1 px-4',
         'border',
         'shadow',
         'focus:outline-none',
-        BUTTON_STYLES_MAP[kind]
+        disabledClassName,
+        BUTTON_STYLES_MAP[kind],
+        className
       ].join(' ')}
       type="button"
       onClick={onClick}
