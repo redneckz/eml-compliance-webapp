@@ -1,9 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body,
 #root {
   @apply w-screen h-screen overflow-x-hidden;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  animation: rotating 4s linear infinite;
+}
