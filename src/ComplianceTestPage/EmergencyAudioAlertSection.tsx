@@ -1,14 +1,13 @@
 import * as React from 'react';
 import * as Domain from '../Domain';
-import { Icon, WarnIcon, FireIcon, WeatherIcon, GunIcon } from '../icons';
-import { Section, SectionKind, IconButton, IconButtonKind } from '../modules';
+import { Icon, Section, SectionKind, IconButton, IconButtonKind } from '../modules';
 
 const ALERT_ICONS_MAP: {
-  [key in Domain.AlertKind]: React.ReactElement<React.ComponentProps<typeof Icon>, typeof Icon>;
+  [key in Domain.AlertKind]: React.ReactElement<React.ComponentProps<typeof Icon.Icon>, typeof Icon.Icon>;
 } = {
-  [Domain.AlertKind.Fire]: <FireIcon />,
-  [Domain.AlertKind.Weather]: <WeatherIcon />,
-  [Domain.AlertKind.Shooter]: <GunIcon />
+  [Domain.AlertKind.Fire]: <Icon.Fire />,
+  [Domain.AlertKind.Weather]: <Icon.Weather />,
+  [Domain.AlertKind.Shooter]: <Icon.Gun />
 };
 
 interface AlertSectionProps {
@@ -22,7 +21,7 @@ export function EmergencyAudioAlertSection({ toggledAlert, alerts, loading, onTo
   return alerts && alerts.length ? (
     <Section title="Emergency Audio Alert" kind={SectionKind.Odd}>
       <div className="flex flex-no-wrap">
-        <WarnIcon className="mr-4 w-8 h-8" />
+        <Icon.Warn className="mr-4 w-8 h-8" />
         {alerts.map(kind => (
           <IconButton
             key={kind.toString()}

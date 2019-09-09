@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Section, SectionKind, Button, ButtonKind } from '../modules';
-import { GearIcon, ReportIcon } from '../icons';
+import { Icon, Section, SectionKind, Button, ButtonKind } from '../modules';
 
 interface TestSectionProps {
   inProgress?: boolean;
@@ -13,11 +12,11 @@ export function ComplianceTestSection({ inProgress, onTestRun, onReport }: TestS
     <Section title="Compliance" kind={SectionKind.Emp}>
       <div className="flex flex-no-wrap items-center">
         <Button className="mr-4" kind={ButtonKind.Emp} disabled={inProgress} onClick={onTestRun}>
-          <GearIcon className={['mr-2', 'w-4 h-4', inProgress ? 'loader' : ''].filter(Boolean).join(' ')} />
+          <Icon.Gear className={['mr-2', 'w-4 h-4', inProgress ? 'loader' : ''].filter(Boolean).join(' ')} />
           Test
         </Button>
         <Button kind={ButtonKind.Emp} disabled={inProgress} onClick={onReport}>
-          <ReportIcon className="mr-2 w-4 h-4" />
+          <Icon.Report className="mr-2 w-4 h-4" />
           Report
         </Button>
       </div>

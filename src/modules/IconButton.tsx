@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Icon } from '../icons';
+import { Icon } from './Icon';
 
 export enum IconButtonKind {
   Odd = 'odd',
