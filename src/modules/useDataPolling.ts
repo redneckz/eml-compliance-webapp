@@ -5,8 +5,12 @@ export function useDataPolling<T>(dataProvider: () => Promise<T>, timeout: numbe
   React.useEffect(() => {
     let timerId: NodeJS.Timeout;
     const updateData = async () => {
-      const data = await dataProvider();
-      setData(data);
+      try {
+        const data = await dataProvider();
+        setData(data);
+      } catch (ex) {
+        console.log(ex);
+      }
       timerId = setTimeout(updateData, timeout);
     };
     updateData();
