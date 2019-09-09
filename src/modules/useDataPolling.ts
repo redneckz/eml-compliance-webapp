@@ -6,15 +6,14 @@ export function useDataPolling<T>(dataProvider: () => Promise<T>, timeout: numbe
     let timerId: NodeJS.Timeout;
     const updateData = async () => {
       try {
-        const data = await dataProvider();
-        setData(data);
+        setData(await dataProvider());
       } catch (ex) {
-        console.log(ex);
+        console.warn(ex);
       }
       timerId = setTimeout(updateData, timeout);
     };
     updateData();
     return () => clearTimeout(timerId);
-  }, [dataProvider, timeout]);
+  }, [setData, dataProvider, timeout]);
   return data;
 }

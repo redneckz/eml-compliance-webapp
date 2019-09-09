@@ -8,13 +8,13 @@ interface AlertManagerProps extends JSX.ElementChildrenAttribute {
   timeout?: number;
 }
 
-const DEFAULT_TIMEOUT = 10 * 1000;
+const DEFAULT_TIMEOUT = 5 * 1000;
 
 export function AlertManager({ timeout = DEFAULT_TIMEOUT, children }: AlertManagerProps) {
   const [alertDef, setAlertDef] = React.useState<AlertDef>();
   const [active, setActive] = React.useState(false);
   const timerId = React.useRef<NodeJS.Timeout>();
-  const handleClose = React.useCallback(() => setActive(false), []);
+  const handleClose = React.useCallback(() => setActive(false), [setActive]);
   const showAlert = React.useCallback(
     (newAlertDef: AlertDef): void => {
       setAlertDef(newAlertDef);
@@ -22,7 +22,7 @@ export function AlertManager({ timeout = DEFAULT_TIMEOUT, children }: AlertManag
       if (timerId.current) clearTimeout(timerId.current);
       timerId.current = setTimeout(handleClose, timeout);
     },
-    [timeout, handleClose]
+    [setAlertDef, setActive, timerId, timeout, handleClose]
   );
   return (
     <AlertManagerContext.Provider value={showAlert}>
