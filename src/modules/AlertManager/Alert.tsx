@@ -9,7 +9,7 @@ interface AlertProps extends AlertDef {
 
 export function Alert({ title, description, onClose }: AlertProps) {
   return (
-    <div className="bg-red-100 border border-red-500 text-red-700 text-sm p-2 relative shadow" role="alert">
+    <div className="font-mono bg-red-100 border border-red-500 text-red-700 text-sm p-2 relative shadow" role="alert">
       <strong className="font-bold mr-2">{title}</strong>
       <span className="block sm:inline">{description}</span>
       <span className="absolute top-0 right-0">
