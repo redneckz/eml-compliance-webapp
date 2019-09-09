@@ -3,6 +3,8 @@ import { runTest } from '../API';
 import { useLoader, useAlertManager } from '../modules';
 import { ComplianceTestSection } from './ComplianceTestSection';
 
+const RUN_REPORT_URL = process.env.RUN_REPORT_URL || 'http://server.jabiliot.com/run_report';
+
 export function ComplianceTestBar() {
   const showAlert = useAlertManager();
   const [inProgress, handleTest] = useLoader(async () => {
@@ -12,6 +14,8 @@ export function ComplianceTestBar() {
       showAlert({ title: 'Test Failure', description: ex.message });
     }
   });
-  const handleReport = React.useCallback(() => console.log('handleReport'), []);
+  const handleReport = React.useCallback(() => {
+    window.open(RUN_REPORT_URL, 'ComplianceTestReport');
+  }, []);
   return <ComplianceTestSection inProgress={inProgress} onTestRun={handleTest} onReport={handleReport} />;
 }

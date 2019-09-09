@@ -1,4 +1,4 @@
-const API_URL: string = process.env.API_URL || 'http://server.jabiliot.com';
+export const API_URL: string = process.env.API_URL || 'http://server.jabiliot.com';
 
 export class Resource<T> {
   private baseURL: string;
