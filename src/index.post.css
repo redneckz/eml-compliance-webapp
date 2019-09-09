@@ -20,3 +20,15 @@ body,
 .loader {
   animation: rotating 4s linear infinite;
 }
+
+.trans-fast {
+  transition: all 300ms;
+}
+
+.trans {
+  transition: all 600ms;
+}
+
+.trans-slow {
+  transition: all 1s;
+}

@@ -6582,11 +6582,32 @@ video {
   left: 0;
 }
 
-.inset-auto {
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
+.-inset-4 {
+  top: -1rem;
+  right: -1rem;
+  bottom: -1rem;
+  left: -1rem;
+}
+
+.-inset-8 {
+  top: -2rem;
+  right: -2rem;
+  bottom: -2rem;
+  left: -2rem;
+}
+
+.-inset-12 {
+  top: -3rem;
+  right: -3rem;
+  bottom: -3rem;
+  left: -3rem;
+}
+
+.-inset-16 {
+  top: -4rem;
+  right: -4rem;
+  bottom: -4rem;
+  left: -4rem;
 }
 
 .inset-y-0 {
@@ -6599,14 +6620,44 @@ video {
   left: 0;
 }
 
-.inset-y-auto {
-  top: auto;
-  bottom: auto;
+.-inset-y-4 {
+  top: -1rem;
+  bottom: -1rem;
 }
 
-.inset-x-auto {
-  right: auto;
-  left: auto;
+.-inset-x-4 {
+  right: -1rem;
+  left: -1rem;
+}
+
+.-inset-y-8 {
+  top: -2rem;
+  bottom: -2rem;
+}
+
+.-inset-x-8 {
+  right: -2rem;
+  left: -2rem;
+}
+
+.-inset-y-12 {
+  top: -3rem;
+  bottom: -3rem;
+}
+
+.-inset-x-12 {
+  right: -3rem;
+  left: -3rem;
+}
+
+.-inset-y-16 {
+  top: -4rem;
+  bottom: -4rem;
+}
+
+.-inset-x-16 {
+  right: -4rem;
+  left: -4rem;
 }
 
 .top-0 {
@@ -6625,20 +6676,68 @@ video {
   left: 0;
 }
 
-.top-auto {
-  top: auto;
+.-top-4 {
+  top: -1rem;
 }
 
-.right-auto {
-  right: auto;
+.-right-4 {
+  right: -1rem;
 }
 
-.bottom-auto {
-  bottom: auto;
+.-bottom-4 {
+  bottom: -1rem;
 }
 
-.left-auto {
-  left: auto;
+.-left-4 {
+  left: -1rem;
+}
+
+.-top-8 {
+  top: -2rem;
+}
+
+.-right-8 {
+  right: -2rem;
+}
+
+.-bottom-8 {
+  bottom: -2rem;
+}
+
+.-left-8 {
+  left: -2rem;
+}
+
+.-top-12 {
+  top: -3rem;
+}
+
+.-right-12 {
+  right: -3rem;
+}
+
+.-bottom-12 {
+  bottom: -3rem;
+}
+
+.-left-12 {
+  left: -3rem;
+}
+
+.-top-16 {
+  top: -4rem;
+}
+
+.-right-16 {
+  right: -4rem;
+}
+
+.-bottom-16 {
+  bottom: -4rem;
+}
+
+.-left-16 {
+  left: -4rem;
 }
 
 .resize-none {
@@ -8370,6 +8469,18 @@ body,
 
 .loader {
   animation: rotating 4s linear infinite;
+}
+
+.trans-fast {
+  transition: all 300ms;
+}
+
+.trans {
+  transition: all 600ms;
+}
+
+.trans-slow {
+  transition: all 1s;
 }
 
 @media (min-width: 640px) {
@@ -14345,11 +14456,32 @@ body,
     left: 0;
   }
 
-  .sm\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .sm\:-inset-4 {
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+  }
+
+  .sm\:-inset-8 {
+    top: -2rem;
+    right: -2rem;
+    bottom: -2rem;
+    left: -2rem;
+  }
+
+  .sm\:-inset-12 {
+    top: -3rem;
+    right: -3rem;
+    bottom: -3rem;
+    left: -3rem;
+  }
+
+  .sm\:-inset-16 {
+    top: -4rem;
+    right: -4rem;
+    bottom: -4rem;
+    left: -4rem;
   }
 
   .sm\:inset-y-0 {
@@ -14362,14 +14494,44 @@ body,
     left: 0;
   }
 
-  .sm\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .sm\:-inset-y-4 {
+    top: -1rem;
+    bottom: -1rem;
   }
 
-  .sm\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .sm\:-inset-x-4 {
+    right: -1rem;
+    left: -1rem;
+  }
+
+  .sm\:-inset-y-8 {
+    top: -2rem;
+    bottom: -2rem;
+  }
+
+  .sm\:-inset-x-8 {
+    right: -2rem;
+    left: -2rem;
+  }
+
+  .sm\:-inset-y-12 {
+    top: -3rem;
+    bottom: -3rem;
+  }
+
+  .sm\:-inset-x-12 {
+    right: -3rem;
+    left: -3rem;
+  }
+
+  .sm\:-inset-y-16 {
+    top: -4rem;
+    bottom: -4rem;
+  }
+
+  .sm\:-inset-x-16 {
+    right: -4rem;
+    left: -4rem;
   }
 
   .sm\:top-0 {
@@ -14388,20 +14550,68 @@ body,
     left: 0;
   }
 
-  .sm\:top-auto {
-    top: auto;
+  .sm\:-top-4 {
+    top: -1rem;
   }
 
-  .sm\:right-auto {
-    right: auto;
+  .sm\:-right-4 {
+    right: -1rem;
   }
 
-  .sm\:bottom-auto {
-    bottom: auto;
+  .sm\:-bottom-4 {
+    bottom: -1rem;
   }
 
-  .sm\:left-auto {
-    left: auto;
+  .sm\:-left-4 {
+    left: -1rem;
+  }
+
+  .sm\:-top-8 {
+    top: -2rem;
+  }
+
+  .sm\:-right-8 {
+    right: -2rem;
+  }
+
+  .sm\:-bottom-8 {
+    bottom: -2rem;
+  }
+
+  .sm\:-left-8 {
+    left: -2rem;
+  }
+
+  .sm\:-top-12 {
+    top: -3rem;
+  }
+
+  .sm\:-right-12 {
+    right: -3rem;
+  }
+
+  .sm\:-bottom-12 {
+    bottom: -3rem;
+  }
+
+  .sm\:-left-12 {
+    left: -3rem;
+  }
+
+  .sm\:-top-16 {
+    top: -4rem;
+  }
+
+  .sm\:-right-16 {
+    right: -4rem;
+  }
+
+  .sm\:-bottom-16 {
+    bottom: -4rem;
+  }
+
+  .sm\:-left-16 {
+    left: -4rem;
   }
 
   .sm\:resize-none {
@@ -22087,11 +22297,32 @@ body,
     left: 0;
   }
 
-  .md\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .md\:-inset-4 {
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+  }
+
+  .md\:-inset-8 {
+    top: -2rem;
+    right: -2rem;
+    bottom: -2rem;
+    left: -2rem;
+  }
+
+  .md\:-inset-12 {
+    top: -3rem;
+    right: -3rem;
+    bottom: -3rem;
+    left: -3rem;
+  }
+
+  .md\:-inset-16 {
+    top: -4rem;
+    right: -4rem;
+    bottom: -4rem;
+    left: -4rem;
   }
 
   .md\:inset-y-0 {
@@ -22104,14 +22335,44 @@ body,
     left: 0;
   }
 
-  .md\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .md\:-inset-y-4 {
+    top: -1rem;
+    bottom: -1rem;
   }
 
-  .md\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .md\:-inset-x-4 {
+    right: -1rem;
+    left: -1rem;
+  }
+
+  .md\:-inset-y-8 {
+    top: -2rem;
+    bottom: -2rem;
+  }
+
+  .md\:-inset-x-8 {
+    right: -2rem;
+    left: -2rem;
+  }
+
+  .md\:-inset-y-12 {
+    top: -3rem;
+    bottom: -3rem;
+  }
+
+  .md\:-inset-x-12 {
+    right: -3rem;
+    left: -3rem;
+  }
+
+  .md\:-inset-y-16 {
+    top: -4rem;
+    bottom: -4rem;
+  }
+
+  .md\:-inset-x-16 {
+    right: -4rem;
+    left: -4rem;
   }
 
   .md\:top-0 {
@@ -22130,20 +22391,68 @@ body,
     left: 0;
   }
 
-  .md\:top-auto {
-    top: auto;
+  .md\:-top-4 {
+    top: -1rem;
   }
 
-  .md\:right-auto {
-    right: auto;
+  .md\:-right-4 {
+    right: -1rem;
   }
 
-  .md\:bottom-auto {
-    bottom: auto;
+  .md\:-bottom-4 {
+    bottom: -1rem;
   }
 
-  .md\:left-auto {
-    left: auto;
+  .md\:-left-4 {
+    left: -1rem;
+  }
+
+  .md\:-top-8 {
+    top: -2rem;
+  }
+
+  .md\:-right-8 {
+    right: -2rem;
+  }
+
+  .md\:-bottom-8 {
+    bottom: -2rem;
+  }
+
+  .md\:-left-8 {
+    left: -2rem;
+  }
+
+  .md\:-top-12 {
+    top: -3rem;
+  }
+
+  .md\:-right-12 {
+    right: -3rem;
+  }
+
+  .md\:-bottom-12 {
+    bottom: -3rem;
+  }
+
+  .md\:-left-12 {
+    left: -3rem;
+  }
+
+  .md\:-top-16 {
+    top: -4rem;
+  }
+
+  .md\:-right-16 {
+    right: -4rem;
+  }
+
+  .md\:-bottom-16 {
+    bottom: -4rem;
+  }
+
+  .md\:-left-16 {
+    left: -4rem;
   }
 
   .md\:resize-none {
@@ -29829,11 +30138,32 @@ body,
     left: 0;
   }
 
-  .lg\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .lg\:-inset-4 {
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+  }
+
+  .lg\:-inset-8 {
+    top: -2rem;
+    right: -2rem;
+    bottom: -2rem;
+    left: -2rem;
+  }
+
+  .lg\:-inset-12 {
+    top: -3rem;
+    right: -3rem;
+    bottom: -3rem;
+    left: -3rem;
+  }
+
+  .lg\:-inset-16 {
+    top: -4rem;
+    right: -4rem;
+    bottom: -4rem;
+    left: -4rem;
   }
 
   .lg\:inset-y-0 {
@@ -29846,14 +30176,44 @@ body,
     left: 0;
   }
 
-  .lg\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .lg\:-inset-y-4 {
+    top: -1rem;
+    bottom: -1rem;
   }
 
-  .lg\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .lg\:-inset-x-4 {
+    right: -1rem;
+    left: -1rem;
+  }
+
+  .lg\:-inset-y-8 {
+    top: -2rem;
+    bottom: -2rem;
+  }
+
+  .lg\:-inset-x-8 {
+    right: -2rem;
+    left: -2rem;
+  }
+
+  .lg\:-inset-y-12 {
+    top: -3rem;
+    bottom: -3rem;
+  }
+
+  .lg\:-inset-x-12 {
+    right: -3rem;
+    left: -3rem;
+  }
+
+  .lg\:-inset-y-16 {
+    top: -4rem;
+    bottom: -4rem;
+  }
+
+  .lg\:-inset-x-16 {
+    right: -4rem;
+    left: -4rem;
   }
 
   .lg\:top-0 {
@@ -29872,20 +30232,68 @@ body,
     left: 0;
   }
 
-  .lg\:top-auto {
-    top: auto;
+  .lg\:-top-4 {
+    top: -1rem;
   }
 
-  .lg\:right-auto {
-    right: auto;
+  .lg\:-right-4 {
+    right: -1rem;
   }
 
-  .lg\:bottom-auto {
-    bottom: auto;
+  .lg\:-bottom-4 {
+    bottom: -1rem;
   }
 
-  .lg\:left-auto {
-    left: auto;
+  .lg\:-left-4 {
+    left: -1rem;
+  }
+
+  .lg\:-top-8 {
+    top: -2rem;
+  }
+
+  .lg\:-right-8 {
+    right: -2rem;
+  }
+
+  .lg\:-bottom-8 {
+    bottom: -2rem;
+  }
+
+  .lg\:-left-8 {
+    left: -2rem;
+  }
+
+  .lg\:-top-12 {
+    top: -3rem;
+  }
+
+  .lg\:-right-12 {
+    right: -3rem;
+  }
+
+  .lg\:-bottom-12 {
+    bottom: -3rem;
+  }
+
+  .lg\:-left-12 {
+    left: -3rem;
+  }
+
+  .lg\:-top-16 {
+    top: -4rem;
+  }
+
+  .lg\:-right-16 {
+    right: -4rem;
+  }
+
+  .lg\:-bottom-16 {
+    bottom: -4rem;
+  }
+
+  .lg\:-left-16 {
+    left: -4rem;
   }
 
   .lg\:resize-none {
@@ -37571,11 +37979,32 @@ body,
     left: 0;
   }
 
-  .xl\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .xl\:-inset-4 {
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+  }
+
+  .xl\:-inset-8 {
+    top: -2rem;
+    right: -2rem;
+    bottom: -2rem;
+    left: -2rem;
+  }
+
+  .xl\:-inset-12 {
+    top: -3rem;
+    right: -3rem;
+    bottom: -3rem;
+    left: -3rem;
+  }
+
+  .xl\:-inset-16 {
+    top: -4rem;
+    right: -4rem;
+    bottom: -4rem;
+    left: -4rem;
   }
 
   .xl\:inset-y-0 {
@@ -37588,14 +38017,44 @@ body,
     left: 0;
   }
 
-  .xl\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .xl\:-inset-y-4 {
+    top: -1rem;
+    bottom: -1rem;
   }
 
-  .xl\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .xl\:-inset-x-4 {
+    right: -1rem;
+    left: -1rem;
+  }
+
+  .xl\:-inset-y-8 {
+    top: -2rem;
+    bottom: -2rem;
+  }
+
+  .xl\:-inset-x-8 {
+    right: -2rem;
+    left: -2rem;
+  }
+
+  .xl\:-inset-y-12 {
+    top: -3rem;
+    bottom: -3rem;
+  }
+
+  .xl\:-inset-x-12 {
+    right: -3rem;
+    left: -3rem;
+  }
+
+  .xl\:-inset-y-16 {
+    top: -4rem;
+    bottom: -4rem;
+  }
+
+  .xl\:-inset-x-16 {
+    right: -4rem;
+    left: -4rem;
   }
 
   .xl\:top-0 {
@@ -37614,20 +38073,68 @@ body,
     left: 0;
   }
 
-  .xl\:top-auto {
-    top: auto;
+  .xl\:-top-4 {
+    top: -1rem;
   }
 
-  .xl\:right-auto {
-    right: auto;
+  .xl\:-right-4 {
+    right: -1rem;
   }
 
-  .xl\:bottom-auto {
-    bottom: auto;
+  .xl\:-bottom-4 {
+    bottom: -1rem;
   }
 
-  .xl\:left-auto {
-    left: auto;
+  .xl\:-left-4 {
+    left: -1rem;
+  }
+
+  .xl\:-top-8 {
+    top: -2rem;
+  }
+
+  .xl\:-right-8 {
+    right: -2rem;
+  }
+
+  .xl\:-bottom-8 {
+    bottom: -2rem;
+  }
+
+  .xl\:-left-8 {
+    left: -2rem;
+  }
+
+  .xl\:-top-12 {
+    top: -3rem;
+  }
+
+  .xl\:-right-12 {
+    right: -3rem;
+  }
+
+  .xl\:-bottom-12 {
+    bottom: -3rem;
+  }
+
+  .xl\:-left-12 {
+    left: -3rem;
+  }
+
+  .xl\:-top-16 {
+    top: -4rem;
+  }
+
+  .xl\:-right-16 {
+    right: -4rem;
+  }
+
+  .xl\:-bottom-16 {
+    bottom: -4rem;
+  }
+
+  .xl\:-left-16 {
+    left: -4rem;
   }
 
   .xl\:resize-none {
