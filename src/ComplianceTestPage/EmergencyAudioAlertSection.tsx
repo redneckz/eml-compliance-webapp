@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as Domain from '../Domain';
-import { Icon, Section, SectionKind, IconButton, IconButtonKind } from '../modules';
+import { Icon, Section, SectionKind, ToggleButton } from '../modules';
 
 const ALERT_ICONS_MAP: {
   [key in Domain.AlertKind]: React.ReactElement<React.ComponentProps<typeof Icon.Icon>, typeof Icon.Icon>;
 } = {
-  [Domain.AlertKind.Fire]: <Icon.Fire />,
-  [Domain.AlertKind.Weather]: <Icon.Weather />,
-  [Domain.AlertKind.Shooter]: <Icon.Gun />
+  [Domain.AlertKind.Fire]: <Icon.Fire className="w-6" />,
+  [Domain.AlertKind.Weather]: <Icon.Weather className="w-6" />,
+  [Domain.AlertKind.Shooter]: <Icon.Gun className="w-6" />
 };
 
 interface AlertSectionProps {
@@ -18,21 +18,21 @@ interface AlertSectionProps {
 }
 
 export function EmergencyAudioAlertSection({ toggledAlert, alerts, loading, onToggle }: AlertSectionProps) {
-  return alerts && alerts.length ? (
-    <Section title="Emergency Audio Alert" kind={SectionKind.Odd}>
+  return (
+    <Section title="Emergency Audio Alert" kind={SectionKind.Neutral}>
       <div className="flex flex-no-wrap">
-        <Icon.Warn className="mr-4 w-8 h-8" />
         {alerts.map(kind => (
-          <IconButton
+          <ToggleButton
             key={kind.toString()}
-            className="mr-4 w-8 h-8"
-            kind={toggledAlert === kind ? IconButtonKind.Emp : IconButtonKind.Odd}
-            icon={ALERT_ICONS_MAP[kind]}
+            className="mr-2"
+            active={toggledAlert === kind}
             disabled={loading}
             onClick={() => onToggle(kind)}
-          />
+          >
+            {ALERT_ICONS_MAP[kind]}
+          </ToggleButton>
         ))}
       </div>
     </Section>
-  ) : null;
+  );
 }

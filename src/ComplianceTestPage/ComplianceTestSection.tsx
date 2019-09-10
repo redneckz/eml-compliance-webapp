@@ -9,14 +9,14 @@ interface TestSectionProps {
 
 export function ComplianceTestSection({ inProgress, onTestRun, onReport }: TestSectionProps) {
   return (
-    <Section title="Compliance" kind={SectionKind.Emp}>
+    <Section title="Compliance" kind={SectionKind.Primary}>
       <div className="flex flex-no-wrap items-center">
-        <Button className="mr-4" kind={ButtonKind.Emp} disabled={inProgress} onClick={onTestRun}>
-          <Icon.Gear className={['mr-2', 'w-4 h-4', inProgress ? 'loader' : ''].filter(Boolean).join(' ')} />
+        <Button className="mr-2" kind={ButtonKind.Primary} disabled={inProgress} onClick={onTestRun}>
+          <Icon.Refresh className={['mr-1', 'w-4 h-4', inProgress ? 'loader' : ''].filter(Boolean).join(' ')} />
           Test
         </Button>
-        <Button kind={ButtonKind.Emp} disabled={inProgress} onClick={onReport}>
-          <Icon.Report className="mr-2 w-4 h-4" />
+        <Button kind={ButtonKind.Primary} disabled={inProgress} onClick={onReport}>
+          <Icon.Report className="mr-1 w-4 h-4" />
           Report
         </Button>
       </div>

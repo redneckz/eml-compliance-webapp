@@ -9,7 +9,7 @@ const DATA_POLLING_TIMEOUT = 10 * 1000;
 export function SecurityAndMotionBar() {
   const motion = useDataPolling(MotionResource.get, DATA_POLLING_TIMEOUT);
   return (
-    <Section title="Security /Motion" kind={SectionKind.Even}>
+    <Section title="Security /Motion" kind={SectionKind.Secondary}>
       {formatMotion(motion)}
     </Section>
   );

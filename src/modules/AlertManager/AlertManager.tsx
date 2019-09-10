@@ -27,12 +27,7 @@ export function AlertManager({ timeout = DEFAULT_TIMEOUT, children }: AlertManag
   return (
     <AlertManagerContext.Provider value={showAlert}>
       {alertDef ? (
-        <div
-          className={[
-            'trans fixed h-12 md:h-8 px-12 md:px-24 inset-x-0',
-            active ? 'bottom-0' : '-bottom-12 md:-bottom-8'
-          ].join(' ')}
-        >
+        <div className={['trans fixed z-50 h-12 px-12 inset-x-0', active ? 'bottom-0' : '-bottom-12'].join(' ')}>
           <Alert title={alertDef.title} description={alertDef.description} onClose={handleClose} />
         </div>
       ) : null}

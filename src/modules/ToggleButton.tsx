@@ -1,25 +1,14 @@
 import * as React from 'react';
 
-export enum ButtonKind {
-  Primary,
-  Secondary
-}
-
-const BUTTON_STYLES_MAP: { [key in ButtonKind]: string } = {
-  [ButtonKind.Primary]:
-    'bg-transparent text-white border-white hover:bg-white hover:text-p-dark hover:border-transparent',
-  [ButtonKind.Secondary]: 'bg-primary text-black border-p-dark hover:bg-p-dark hover:text-white'
-};
-
-interface ButtonProps {
+interface ToggleButtonProps {
   className?: string;
-  kind?: ButtonKind;
+  active?: boolean;
   disabled?: boolean;
   onClick: () => any;
   children?: {};
 }
 
-export function Button({ className, kind = ButtonKind.Primary, disabled, onClick, children }: ButtonProps) {
+export function ToggleButton({ className, active, disabled, onClick, children }: ToggleButtonProps) {
   const disabledClassName = disabled ? 'opacity-75 cursor-wait' : 'cursor-pointer';
   return (
     <button
@@ -29,8 +18,10 @@ export function Button({ className, kind = ButtonKind.Primary, disabled, onClick
         'border rounded',
         'p-2',
         'focus:outline-none',
+        active
+          ? 'bg-primary border-primary hover:border-p-light'
+          : 'bg-transparent border-transparent hover:bg-p-light',
         disabledClassName,
-        BUTTON_STYLES_MAP[kind],
         className
       ].join(' ')}
       type="button"

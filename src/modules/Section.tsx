@@ -1,38 +1,41 @@
 import * as React from 'react';
 
 export enum SectionKind {
-  Odd = 'odd',
-  Even = 'even',
-  Emp = 'emp',
-  Misc = 'misc'
+  Primary,
+  Secondary,
+  Neutral
 }
 
 interface SectionProps extends JSX.ElementChildrenAttribute {
+  className?: string;
   kind: SectionKind;
   title?: string;
 }
 
 const SECTION_STYLES_MAP: { [key in SectionKind]: string } = {
-  [SectionKind.Odd]: 'bg-gray-100 border-gray-500 text-gray-700',
-  [SectionKind.Even]: 'bg-green-100 border-green-500 text-green-700',
-  [SectionKind.Emp]: 'bg-red-100 border-red-500 text-red-700',
-  [SectionKind.Misc]: 'bg-orange-100 border-orange-500 text-orange-700'
+  [SectionKind.Primary]: 'bg-p-dark text-white',
+  [SectionKind.Secondary]: 'bg-p-light text-black',
+  [SectionKind.Neutral]: 'bg-neutral text-black'
 };
 
-export function Section({ kind, title, children }: SectionProps) {
+export function Section({ className, kind = SectionKind.Primary, title, children }: SectionProps) {
   return (
     <section
       className={[
         'flex flex-no-wrap items-center',
-        'border-l-4',
-        'pl-2 pr-2',
-        'md:pl-4 md:pr-4',
-        'h-12',
-        'font-mono',
-        SECTION_STYLES_MAP[kind]
-      ].join(' ')}
+        'border-l-4 border-primary',
+        'px-2 sm:px-4',
+        'h-12 sm:h-16',
+        SECTION_STYLES_MAP[kind],
+        className
+      ]
+        .filter(Boolean)
+        .join(' ')}
+      title={title}
     >
-      <div className="flex-grow-0 flex-shrink-0 font-bold w-32">{title}</div>
+      <div className="flex-grow-0 flex-shrink-0 font-semibold text-base tracking-tight w-24 hidden sm:block sm:mr-2">
+        {title}
+      </div>
       <div className="flex-grow">{children}</div>
     </section>
   );

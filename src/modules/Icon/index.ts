@@ -6,3 +6,4 @@ export { Weather } from './Weather';
 export { Gun } from './Gun';
 export { Gear } from './Gear';
 export { Cross } from './Cross';
+export { Refresh } from './Refresh';

@@ -5,7 +5,7 @@ import { LastAnomalySection } from './LastAnomalySection';
 
 export function TemperatureSection({ temperature }: { temperature?: Domain.Temperature }) {
   return (
-    <Section title="Temperature" kind={SectionKind.Misc}>
+    <Section title="Temperature" kind={SectionKind.Neutral}>
       {temperature ? renderTemperature(temperature) : ''}
     </Section>
   );

@@ -5,7 +5,7 @@
 html,
 body,
 #root {
-  @apply w-screen h-screen overflow-x-hidden;
+  @apply font-mono w-screen h-screen overflow-hidden;
 }
 
 @keyframes rotating {

@@ -3,7 +3,7 @@ import { PageLayout } from '../modules';
 
 interface ComplianceTestPageLayoutProps {
   testBar: JSX.Element;
-  alertBar: JSX.Element;
+  alertBar: JSX.Element | null;
   motionBar: JSX.Element;
   floorPlan: JSX.Element;
   humidityBar: JSX.Element;
@@ -22,16 +22,20 @@ export function ComplianceTestPageLayout({
     <PageLayout
       header={
         <div className="flex flex-wrap">
-          <div className="w-full">{testBar}</div>
-          <div className="w-full">{alertBar}</div>
-          <div className="w-full">{motionBar}</div>
+          <div className={alertBar ? 'w-1/2' : 'w-full'}>{testBar}</div>
+          {alertBar ? <div className="w-1/2">{alertBar}</div> : null}
         </div>
       }
-      body={floorPlan}
+      body={
+        <div className="absolute inset-0 overflow-auto overflow-x-hidden border-t border-b border-primary">
+          {floorPlan}
+        </div>
+      }
       footer={
         <div className="flex flex-wrap">
-          <div className="w-full md:w-1/2">{humidityBar}</div>
-          <div className="w-full md:w-1/2">{temperatureBar}</div>
+          <div className="w-full md:w-1/3">{motionBar}</div>
+          <div className="w-1/2 md:w-1/3">{humidityBar}</div>
+          <div className="w-1/2 md:w-1/3">{temperatureBar}</div>
         </div>
       }
     />

@@ -5,7 +5,7 @@ import { LastAnomalySection } from './LastAnomalySection';
 
 export function HumiditySection({ humidity }: { humidity?: Domain.Humidity }) {
   return (
-    <Section title="Humidity" kind={SectionKind.Even}>
+    <Section title="Humidity" kind={SectionKind.Neutral}>
       {humidity ? renderHumidity(humidity) : ''}
     </Section>
   );

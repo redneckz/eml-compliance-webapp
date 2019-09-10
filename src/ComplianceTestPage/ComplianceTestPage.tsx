@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { AudioAlertResource } from '../API';
+import { useDataPolling } from '../modules';
 import { ComplianceTestPageLayout } from './ComplianceTestPageLayout';
 import { ComplianceTestBar } from './ComplianceTestBar';
 import { EmergencyAudioAlertBar } from './EmergencyAudioAlertBar';
@@ -7,13 +9,20 @@ import { FloorPlan } from './FloorPlan';
 import { HumidityBar } from './HumidityBar';
 import { TemperatureBar } from './TemperatureBar';
 
+const DATA_POLLING_TIMEOUT = 10 * 1000;
+
 export function ComplianceTestPage() {
+  const alerts = useDataPolling(AudioAlertResource.getAll, DATA_POLLING_TIMEOUT);
   return (
     <ComplianceTestPageLayout
       testBar={<ComplianceTestBar />}
-      alertBar={<EmergencyAudioAlertBar />}
+      alertBar={
+        alerts && alerts.length ? (
+          <EmergencyAudioAlertBar alerts={(alerts || []).map(({ Number: kind }) => kind)} />
+        ) : null
+      }
       motionBar={<SecurityAndMotionBar />}
-      floorPlan={<FloorPlan h="calc(100vh - 5 * 3rem - 2px)" preserveAspectRatio="xMidYMin" />}
+      floorPlan={<FloorPlan />}
       humidityBar={<HumidityBar />}
       temperatureBar={<TemperatureBar />}
     />
