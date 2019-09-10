@@ -546,7 +546,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /**
@@ -1062,6 +1062,10 @@ video {
   background-color: #f5f5f6;
 }
 
+.bg-n-dark {
+  background-color: #c2c2c3;
+}
+
 .bg-error {
   background-color: #b00020;
 }
@@ -1454,6 +1458,10 @@ video {
   background-color: #f5f5f6;
 }
 
+.hover\:bg-n-dark:hover {
+  background-color: #c2c2c3;
+}
+
 .hover\:bg-error:hover {
   background-color: #b00020;
 }
@@ -1844,6 +1852,10 @@ video {
 
 .focus\:bg-neutral:focus {
   background-color: #f5f5f6;
+}
+
+.focus\:bg-n-dark:focus {
+  background-color: #c2c2c3;
 }
 
 .focus\:bg-error:focus {
@@ -2318,6 +2330,10 @@ video {
   border-color: #f5f5f6;
 }
 
+.border-n-dark {
+  border-color: #c2c2c3;
+}
+
 .border-error {
   border-color: #b00020;
 }
@@ -2710,6 +2726,10 @@ video {
   border-color: #f5f5f6;
 }
 
+.hover\:border-n-dark:hover {
+  border-color: #c2c2c3;
+}
+
 .hover\:border-error:hover {
   border-color: #b00020;
 }
@@ -3100,6 +3120,10 @@ video {
 
 .focus\:border-neutral:focus {
   border-color: #f5f5f6;
+}
+
+.focus\:border-n-dark:focus {
+  border-color: #c2c2c3;
 }
 
 .focus\:border-error:focus {
@@ -3709,15 +3733,7 @@ video {
 }
 
 .font-sans {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.font-serif {
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
-.font-mono {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji;
 }
 
 .font-hairline {
@@ -6310,6 +6326,10 @@ video {
   color: #f5f5f6;
 }
 
+.placeholder-n-dark::placeholder {
+  color: #c2c2c3;
+}
+
 .placeholder-error::placeholder {
   color: #b00020;
 }
@@ -6700,6 +6720,10 @@ video {
 
 .focus\:placeholder-neutral:focus::placeholder {
   color: #f5f5f6;
+}
+
+.focus\:placeholder-n-dark:focus::placeholder {
+  color: #c2c2c3;
 }
 
 .focus\:placeholder-error:focus::placeholder {
@@ -7465,6 +7489,10 @@ video {
   color: #f5f5f6;
 }
 
+.text-n-dark {
+  color: #c2c2c3;
+}
+
 .text-error {
   color: #b00020;
 }
@@ -7857,6 +7885,10 @@ video {
   color: #f5f5f6;
 }
 
+.hover\:text-n-dark:hover {
+  color: #c2c2c3;
+}
+
 .hover\:text-error:hover {
   color: #b00020;
 }
@@ -8247,6 +8279,10 @@ video {
 
 .focus\:text-neutral:focus {
   color: #f5f5f6;
+}
+
+.focus\:text-n-dark:focus {
+  color: #c2c2c3;
 }
 
 .focus\:text-error:focus {
@@ -8705,7 +8741,7 @@ video {
 html,
 body,
 #root {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -9190,6 +9226,10 @@ body,
     background-color: #f5f5f6;
   }
 
+  .sm\:bg-n-dark {
+    background-color: #c2c2c3;
+  }
+
   .sm\:bg-error {
     background-color: #b00020;
   }
@@ -9582,6 +9622,10 @@ body,
     background-color: #f5f5f6;
   }
 
+  .sm\:hover\:bg-n-dark:hover {
+    background-color: #c2c2c3;
+  }
+
   .sm\:hover\:bg-error:hover {
     background-color: #b00020;
   }
@@ -9972,6 +10016,10 @@ body,
 
   .sm\:focus\:bg-neutral:focus {
     background-color: #f5f5f6;
+  }
+
+  .sm\:focus\:bg-n-dark:focus {
+    background-color: #c2c2c3;
   }
 
   .sm\:focus\:bg-error:focus {
@@ -10446,6 +10494,10 @@ body,
     border-color: #f5f5f6;
   }
 
+  .sm\:border-n-dark {
+    border-color: #c2c2c3;
+  }
+
   .sm\:border-error {
     border-color: #b00020;
   }
@@ -10838,6 +10890,10 @@ body,
     border-color: #f5f5f6;
   }
 
+  .sm\:hover\:border-n-dark:hover {
+    border-color: #c2c2c3;
+  }
+
   .sm\:hover\:border-error:hover {
     border-color: #b00020;
   }
@@ -11228,6 +11284,10 @@ body,
 
   .sm\:focus\:border-neutral:focus {
     border-color: #f5f5f6;
+  }
+
+  .sm\:focus\:border-n-dark:focus {
+    border-color: #c2c2c3;
   }
 
   .sm\:focus\:border-error:focus {
@@ -11837,15 +11897,7 @@ body,
   }
 
   .sm\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-
-  .sm\:font-serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  }
-
-  .sm\:font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji;
   }
 
   .sm\:font-hairline {
@@ -14438,6 +14490,10 @@ body,
     color: #f5f5f6;
   }
 
+  .sm\:placeholder-n-dark::placeholder {
+    color: #c2c2c3;
+  }
+
   .sm\:placeholder-error::placeholder {
     color: #b00020;
   }
@@ -14828,6 +14884,10 @@ body,
 
   .sm\:focus\:placeholder-neutral:focus::placeholder {
     color: #f5f5f6;
+  }
+
+  .sm\:focus\:placeholder-n-dark:focus::placeholder {
+    color: #c2c2c3;
   }
 
   .sm\:focus\:placeholder-error:focus::placeholder {
@@ -15593,6 +15653,10 @@ body,
     color: #f5f5f6;
   }
 
+  .sm\:text-n-dark {
+    color: #c2c2c3;
+  }
+
   .sm\:text-error {
     color: #b00020;
   }
@@ -15985,6 +16049,10 @@ body,
     color: #f5f5f6;
   }
 
+  .sm\:hover\:text-n-dark:hover {
+    color: #c2c2c3;
+  }
+
   .sm\:hover\:text-error:hover {
     color: #b00020;
   }
@@ -16375,6 +16443,10 @@ body,
 
   .sm\:focus\:text-neutral:focus {
     color: #f5f5f6;
+  }
+
+  .sm\:focus\:text-n-dark:focus {
+    color: #c2c2c3;
   }
 
   .sm\:focus\:text-error:focus {
@@ -17284,6 +17356,10 @@ body,
     background-color: #f5f5f6;
   }
 
+  .md\:bg-n-dark {
+    background-color: #c2c2c3;
+  }
+
   .md\:bg-error {
     background-color: #b00020;
   }
@@ -17676,6 +17752,10 @@ body,
     background-color: #f5f5f6;
   }
 
+  .md\:hover\:bg-n-dark:hover {
+    background-color: #c2c2c3;
+  }
+
   .md\:hover\:bg-error:hover {
     background-color: #b00020;
   }
@@ -18066,6 +18146,10 @@ body,
 
   .md\:focus\:bg-neutral:focus {
     background-color: #f5f5f6;
+  }
+
+  .md\:focus\:bg-n-dark:focus {
+    background-color: #c2c2c3;
   }
 
   .md\:focus\:bg-error:focus {
@@ -18540,6 +18624,10 @@ body,
     border-color: #f5f5f6;
   }
 
+  .md\:border-n-dark {
+    border-color: #c2c2c3;
+  }
+
   .md\:border-error {
     border-color: #b00020;
   }
@@ -18932,6 +19020,10 @@ body,
     border-color: #f5f5f6;
   }
 
+  .md\:hover\:border-n-dark:hover {
+    border-color: #c2c2c3;
+  }
+
   .md\:hover\:border-error:hover {
     border-color: #b00020;
   }
@@ -19322,6 +19414,10 @@ body,
 
   .md\:focus\:border-neutral:focus {
     border-color: #f5f5f6;
+  }
+
+  .md\:focus\:border-n-dark:focus {
+    border-color: #c2c2c3;
   }
 
   .md\:focus\:border-error:focus {
@@ -19931,15 +20027,7 @@ body,
   }
 
   .md\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-
-  .md\:font-serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  }
-
-  .md\:font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji;
   }
 
   .md\:font-hairline {
@@ -22532,6 +22620,10 @@ body,
     color: #f5f5f6;
   }
 
+  .md\:placeholder-n-dark::placeholder {
+    color: #c2c2c3;
+  }
+
   .md\:placeholder-error::placeholder {
     color: #b00020;
   }
@@ -22922,6 +23014,10 @@ body,
 
   .md\:focus\:placeholder-neutral:focus::placeholder {
     color: #f5f5f6;
+  }
+
+  .md\:focus\:placeholder-n-dark:focus::placeholder {
+    color: #c2c2c3;
   }
 
   .md\:focus\:placeholder-error:focus::placeholder {
@@ -23687,6 +23783,10 @@ body,
     color: #f5f5f6;
   }
 
+  .md\:text-n-dark {
+    color: #c2c2c3;
+  }
+
   .md\:text-error {
     color: #b00020;
   }
@@ -24079,6 +24179,10 @@ body,
     color: #f5f5f6;
   }
 
+  .md\:hover\:text-n-dark:hover {
+    color: #c2c2c3;
+  }
+
   .md\:hover\:text-error:hover {
     color: #b00020;
   }
@@ -24469,6 +24573,10 @@ body,
 
   .md\:focus\:text-neutral:focus {
     color: #f5f5f6;
+  }
+
+  .md\:focus\:text-n-dark:focus {
+    color: #c2c2c3;
   }
 
   .md\:focus\:text-error:focus {
@@ -25378,6 +25486,10 @@ body,
     background-color: #f5f5f6;
   }
 
+  .lg\:bg-n-dark {
+    background-color: #c2c2c3;
+  }
+
   .lg\:bg-error {
     background-color: #b00020;
   }
@@ -25770,6 +25882,10 @@ body,
     background-color: #f5f5f6;
   }
 
+  .lg\:hover\:bg-n-dark:hover {
+    background-color: #c2c2c3;
+  }
+
   .lg\:hover\:bg-error:hover {
     background-color: #b00020;
   }
@@ -26160,6 +26276,10 @@ body,
 
   .lg\:focus\:bg-neutral:focus {
     background-color: #f5f5f6;
+  }
+
+  .lg\:focus\:bg-n-dark:focus {
+    background-color: #c2c2c3;
   }
 
   .lg\:focus\:bg-error:focus {
@@ -26634,6 +26754,10 @@ body,
     border-color: #f5f5f6;
   }
 
+  .lg\:border-n-dark {
+    border-color: #c2c2c3;
+  }
+
   .lg\:border-error {
     border-color: #b00020;
   }
@@ -27026,6 +27150,10 @@ body,
     border-color: #f5f5f6;
   }
 
+  .lg\:hover\:border-n-dark:hover {
+    border-color: #c2c2c3;
+  }
+
   .lg\:hover\:border-error:hover {
     border-color: #b00020;
   }
@@ -27416,6 +27544,10 @@ body,
 
   .lg\:focus\:border-neutral:focus {
     border-color: #f5f5f6;
+  }
+
+  .lg\:focus\:border-n-dark:focus {
+    border-color: #c2c2c3;
   }
 
   .lg\:focus\:border-error:focus {
@@ -28025,15 +28157,7 @@ body,
   }
 
   .lg\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-
-  .lg\:font-serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  }
-
-  .lg\:font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji;
   }
 
   .lg\:font-hairline {
@@ -30626,6 +30750,10 @@ body,
     color: #f5f5f6;
   }
 
+  .lg\:placeholder-n-dark::placeholder {
+    color: #c2c2c3;
+  }
+
   .lg\:placeholder-error::placeholder {
     color: #b00020;
   }
@@ -31016,6 +31144,10 @@ body,
 
   .lg\:focus\:placeholder-neutral:focus::placeholder {
     color: #f5f5f6;
+  }
+
+  .lg\:focus\:placeholder-n-dark:focus::placeholder {
+    color: #c2c2c3;
   }
 
   .lg\:focus\:placeholder-error:focus::placeholder {
@@ -31781,6 +31913,10 @@ body,
     color: #f5f5f6;
   }
 
+  .lg\:text-n-dark {
+    color: #c2c2c3;
+  }
+
   .lg\:text-error {
     color: #b00020;
   }
@@ -32173,6 +32309,10 @@ body,
     color: #f5f5f6;
   }
 
+  .lg\:hover\:text-n-dark:hover {
+    color: #c2c2c3;
+  }
+
   .lg\:hover\:text-error:hover {
     color: #b00020;
   }
@@ -32563,6 +32703,10 @@ body,
 
   .lg\:focus\:text-neutral:focus {
     color: #f5f5f6;
+  }
+
+  .lg\:focus\:text-n-dark:focus {
+    color: #c2c2c3;
   }
 
   .lg\:focus\:text-error:focus {
@@ -33472,6 +33616,10 @@ body,
     background-color: #f5f5f6;
   }
 
+  .xl\:bg-n-dark {
+    background-color: #c2c2c3;
+  }
+
   .xl\:bg-error {
     background-color: #b00020;
   }
@@ -33864,6 +34012,10 @@ body,
     background-color: #f5f5f6;
   }
 
+  .xl\:hover\:bg-n-dark:hover {
+    background-color: #c2c2c3;
+  }
+
   .xl\:hover\:bg-error:hover {
     background-color: #b00020;
   }
@@ -34254,6 +34406,10 @@ body,
 
   .xl\:focus\:bg-neutral:focus {
     background-color: #f5f5f6;
+  }
+
+  .xl\:focus\:bg-n-dark:focus {
+    background-color: #c2c2c3;
   }
 
   .xl\:focus\:bg-error:focus {
@@ -34728,6 +34884,10 @@ body,
     border-color: #f5f5f6;
   }
 
+  .xl\:border-n-dark {
+    border-color: #c2c2c3;
+  }
+
   .xl\:border-error {
     border-color: #b00020;
   }
@@ -35120,6 +35280,10 @@ body,
     border-color: #f5f5f6;
   }
 
+  .xl\:hover\:border-n-dark:hover {
+    border-color: #c2c2c3;
+  }
+
   .xl\:hover\:border-error:hover {
     border-color: #b00020;
   }
@@ -35510,6 +35674,10 @@ body,
 
   .xl\:focus\:border-neutral:focus {
     border-color: #f5f5f6;
+  }
+
+  .xl\:focus\:border-n-dark:focus {
+    border-color: #c2c2c3;
   }
 
   .xl\:focus\:border-error:focus {
@@ -36119,15 +36287,7 @@ body,
   }
 
   .xl\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-
-  .xl\:font-serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  }
-
-  .xl\:font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji;
   }
 
   .xl\:font-hairline {
@@ -38720,6 +38880,10 @@ body,
     color: #f5f5f6;
   }
 
+  .xl\:placeholder-n-dark::placeholder {
+    color: #c2c2c3;
+  }
+
   .xl\:placeholder-error::placeholder {
     color: #b00020;
   }
@@ -39110,6 +39274,10 @@ body,
 
   .xl\:focus\:placeholder-neutral:focus::placeholder {
     color: #f5f5f6;
+  }
+
+  .xl\:focus\:placeholder-n-dark:focus::placeholder {
+    color: #c2c2c3;
   }
 
   .xl\:focus\:placeholder-error:focus::placeholder {
@@ -39875,6 +40043,10 @@ body,
     color: #f5f5f6;
   }
 
+  .xl\:text-n-dark {
+    color: #c2c2c3;
+  }
+
   .xl\:text-error {
     color: #b00020;
   }
@@ -40267,6 +40439,10 @@ body,
     color: #f5f5f6;
   }
 
+  .xl\:hover\:text-n-dark:hover {
+    color: #c2c2c3;
+  }
+
   .xl\:hover\:text-error:hover {
     color: #b00020;
   }
@@ -40657,6 +40833,10 @@ body,
 
   .xl\:focus\:text-neutral:focus {
     color: #f5f5f6;
+  }
+
+  .xl\:focus\:text-n-dark:focus {
+    color: #c2c2c3;
   }
 
   .xl\:focus\:text-error:focus {

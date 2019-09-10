@@ -19,7 +19,7 @@ interface AlertSectionProps {
 
 export function EmergencyAudioAlertSection({ toggledAlert, alerts, loading, onToggle }: AlertSectionProps) {
   return (
-    <Section title="Emergency Audio Alert" kind={SectionKind.Neutral}>
+    <Section title="Emergency Audio Alert" kind={SectionKind.Primary}>
       <div className="flex flex-no-wrap">
         {alerts.map(kind => (
           <ToggleButton

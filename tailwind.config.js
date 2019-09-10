@@ -1,11 +1,25 @@
 module.exports = {
   theme: {
+    fontFamily: {
+      sans: [
+        'Roboto',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Helvetica Neue',
+        'Arial',
+        'Noto Sans',
+        'sans-serif',
+        'Apple Color Emoji'
+      ]
+    },
     extend: {
       colors: {
         primary: '#e6704d',
         'p-light': '#ffa07a',
         'p-dark': '#af4123',
         neutral: '#f5f5f6',
+        'n-dark': '#c2c2c3',
         error: '#b00020'
       },
       inset: {

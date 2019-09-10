@@ -3,11 +3,11 @@ import { PageLayout } from '../modules';
 
 interface ComplianceTestPageLayoutProps {
   testBar: JSX.Element;
-  alertBar: JSX.Element | null;
+  alertBar?: JSX.Element | null;
   motionBar: JSX.Element;
   floorPlan: JSX.Element;
-  humidityBar: JSX.Element;
-  temperatureBar: JSX.Element;
+  humidityBar?: JSX.Element | null;
+  temperatureBar?: JSX.Element | null;
 }
 
 export function ComplianceTestPageLayout({
@@ -20,24 +20,28 @@ export function ComplianceTestPageLayout({
 }: ComplianceTestPageLayoutProps) {
   return (
     <PageLayout
-      header={
-        <div className="flex flex-wrap">
-          <div className={alertBar ? 'w-1/2' : 'w-full'}>{testBar}</div>
-          {alertBar ? <div className="w-1/2">{alertBar}</div> : null}
-        </div>
-      }
+      header={renderToolbar([testBar, alertBar])}
       body={
         <div className="absolute inset-0 overflow-auto overflow-x-hidden border-t border-b border-primary">
           {floorPlan}
         </div>
       }
-      footer={
-        <div className="flex flex-wrap">
-          <div className="w-full md:w-1/3">{motionBar}</div>
-          <div className="w-1/2 md:w-1/3">{humidityBar}</div>
-          <div className="w-1/2 md:w-1/3">{temperatureBar}</div>
-        </div>
-      }
+      footer={renderToolbar([motionBar, humidityBar, temperatureBar])}
     />
+  );
+}
+
+function renderToolbar(sections: (JSX.Element | null | undefined)[]) {
+  const visibleSections = sections.filter(Boolean) as JSX.Element[];
+  if (!visibleSections || !visibleSections.length) return <div />;
+  if (visibleSections.length === 1) return <div className="w-full">{visibleSections[0]}</div>;
+  return (
+    <div className="flex flex-wrap">
+      {visibleSections.map((section, i) => (
+        <div key={i} className={`w-1/${visibleSections.length}`}>
+          {section}
+        </div>
+      ))}
+    </div>
   );
 }
