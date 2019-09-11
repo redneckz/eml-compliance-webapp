@@ -19,7 +19,11 @@ export function AlertManager({ timeout = DEFAULT_TIMEOUT, children }: AlertManag
     (newAlertDef: AlertDef): void => {
       setAlertDef(newAlertDef);
       setActive(true);
-      if (timerId.current) clearTimeout(timerId.current);
+      try {
+        if (timerId.current) clearTimeout(timerId.current);
+      } catch (ex) {
+        // Do nothing
+      }
       timerId.current = setTimeout(handleClose, timeout);
     },
     [setAlertDef, setActive, timerId, timeout, handleClose]

@@ -5,11 +5,12 @@ import { ComplianceTestSection } from './ComplianceTestSection';
 
 const RUN_REPORT_URL = process.env.RUN_REPORT_URL || 'http://server.jabiliot.com/run_report';
 
-export function ComplianceTestBar() {
+export function ComplianceTestBar({ onTestSuccess }: { onTestSuccess: () => any }) {
   const showAlert = useAlertManager();
   const [inProgress, handleTest] = useLoader(async () => {
     try {
       await runTest();
+      onTestSuccess();
     } catch (ex) {
       showAlert({ title: 'Test Failure', description: ex.message });
     }

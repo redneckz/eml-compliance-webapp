@@ -6,8 +6,7 @@ export const DeviceResource = new Resource<Domain.DeviceStatus>('/list_devices',
 
 const TestService = new Resource<{ 'Wait Time': number }>('/run_test');
 
-export async function runTest(): Promise<Domain.DeviceStatus[]> {
+export async function runTest(): Promise<void> {
   const { 'Wait Time': timeout } = await TestService.post();
   await delay((timeout || 5) * 1000);
-  return await DeviceResource.getAll();
 }
