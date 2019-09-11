@@ -16,14 +16,18 @@ export function ToggleButton({ className, active, disabled, onClick, children }:
         'flex flex-no-wrap items-center justify-center',
         'text-sm leading-none',
         'border rounded',
+        'trans-fast',
+        'shadow',
         'p-2',
         'focus:outline-none',
         active
-          ? 'bg-primary border-primary hover:border-p-light'
-          : 'bg-transparent border-transparent hover:bg-p-light',
+          ? 'bg-primary text-black border-primary hover:bg-p-dark hover:text-white'
+          : 'bg-transparent text-black border-transparent hover:bg-p-dark hover:text-white',
         disabledClassName,
         className
-      ].join(' ')}
+      ]
+        .filter(Boolean)
+        .join(' ')}
       type="button"
       onClick={onClick}
     >

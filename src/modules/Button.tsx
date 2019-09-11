@@ -6,8 +6,8 @@ export enum ButtonKind {
 }
 
 const BUTTON_STYLES_MAP: { [key in ButtonKind]: string } = {
-  [ButtonKind.Primary]: 'bg-primary text-black hover:bg-p-dark hover:text-white',
-  [ButtonKind.Secondary]: 'bg-p-light text-black hover:bg-primary'
+  [ButtonKind.Primary]: 'bg-primary text-black border-transparent shadow hover:bg-p-dark hover:text-white',
+  [ButtonKind.Secondary]: 'bg-transparent text-primary border-p-light hover:bg-n-dark hover:border-primary'
 };
 
 interface ButtonProps {
@@ -26,6 +26,7 @@ export function Button({ className, kind = ButtonKind.Primary, disabled, onClick
         'flex flex-no-wrap items-center justify-center',
         'text-sm',
         'border rounded',
+        'trans-fast',
         'p-2',
         'focus:outline-none',
         disabledClassName,

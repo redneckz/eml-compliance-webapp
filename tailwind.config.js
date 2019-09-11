@@ -18,8 +18,11 @@ module.exports = {
         primary: '#e6704d',
         'p-light': '#ffa07a',
         'p-dark': '#af4123',
-        neutral: '#f5f5f6',
-        'n-dark': '#c2c2c3',
+        secondary: '#4de6d9',
+        's-light': '#89ffff',
+        's-dark': '#00b3a8',
+        neutral: '#f5f5f5',
+        'n-dark': '#e5e5e5',
         error: '#b00020'
       },
       inset: {

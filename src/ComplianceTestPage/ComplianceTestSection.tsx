@@ -13,11 +13,11 @@ export function ComplianceTestSection({ inProgress, onTestRun, onReport }: TestS
       <div className="flex flex-no-wrap items-center">
         <Button className="mr-2" kind={ButtonKind.Primary} disabled={inProgress} onClick={onTestRun}>
           <Icon.Refresh className={['mr-1', 'w-4 h-4', inProgress ? 'loader' : ''].filter(Boolean).join(' ')} />
-          Test
+          <span className="font-semibold">TEST</span>
         </Button>
-        <Button kind={ButtonKind.Primary} disabled={inProgress} onClick={onReport}>
+        <Button kind={ButtonKind.Secondary} disabled={inProgress} onClick={onReport}>
           <Icon.Report className="mr-1 w-4 h-4" />
-          Report
+          <span className="font-semibold">REPORT</span>
         </Button>
       </div>
     </Section>
