@@ -26,7 +26,7 @@ export function ComplianceTestPage() {
         ) : null
       }
       motionBar={<SecurityAndMotionBar />}
-      floorPlan={<FloorPlan devices={devices} />}
+      floorPlan={<FloorPlan devices={devices || []} />}
       humidityBar={humidity ? <HumiditySection humidity={humidity} /> : null}
       temperatureBar={temperature ? <TemperatureSection temperature={temperature} /> : null}
     />

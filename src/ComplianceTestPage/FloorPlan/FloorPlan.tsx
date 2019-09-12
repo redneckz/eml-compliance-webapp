@@ -1,25 +1,24 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import * as Domain from '../../Domain';
+import { loadFloorPlan } from '../../API';
+import { useDataProvider } from '../../modules';
 import { FloorPlanDevice } from './FloorPlanDevice';
-import { ReactComponent as FloorPlanMock } from './floorPlanMock.svg';
 
-interface FloorPlanProps extends React.SVGAttributes<SVGElement> {
+interface FloorPlanProps {
   devices: Domain.DeviceStatus[];
 }
 
-export function FloorPlan({ devices, ...rest }: FloorPlanProps) {
-  const floorPlanEl = React.useRef<SVGSVGElement>(null);
-  return (
-    <>
-      {floorPlanEl.current
-        ? ReactDOM.createPortal(renderDevices(devices), floorPlanEl.current.getElementById('devices-group'))
-        : null}
-      <FloorPlanMock ref={floorPlanEl} className="w-full" preserveAspectRatio="xMidYMin" {...rest} />
-    </>
-  );
-}
+const DEV_SIZE_K = 10;
 
-function renderDevices(devices: Domain.DeviceStatus[]) {
-  return devices.map(dev => <FloorPlanDevice key={`${dev.X}${dev.Y}`} {...dev} />);
+export function FloorPlan({ devices }: FloorPlanProps) {
+  const [floorPlan] = useDataProvider(loadFloorPlan);
+  const deviceSize = floorPlan ? Math.ceil(Math.min(floorPlan.w, floorPlan.h) / DEV_SIZE_K) : undefined;
+  return floorPlan ? (
+    <svg viewBox={`0 0 ${floorPlan.w} ${floorPlan.h}`} className="w-full">
+      <image href={floorPlan.dataURL} x="0" y="0" />
+      {devices.map(dev => (
+        <FloorPlanDevice key={`${dev.X}${dev.Y}`} device={dev} size={deviceSize} />
+      ))}
+    </svg>
+  ) : null;
 }
