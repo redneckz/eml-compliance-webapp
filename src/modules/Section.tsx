@@ -22,8 +22,8 @@ export function Section({ className, kind = SectionKind.Primary, title, children
       className={[
         'flex flex-no-wrap items-center',
         'border-l-4',
-        'px-2 md:px-4',
-        'h-12 md:h-16',
+        'px-2 lg:px-4',
+        'h-12 lg:h-16',
         SECTION_STYLES_MAP[kind],
         className
       ]
@@ -36,7 +36,7 @@ export function Section({ className, kind = SectionKind.Primary, title, children
           'flex-grow-0 flex-shrink-0',
           'text-base tracking-tight',
           'w-24',
-          'hidden md:block md:mr-2',
+          'hidden lg:block lg:mr-2',
           kind === SectionKind.Primary ? 'font-bold' : 'font-semibold'
         ].join(' ')}
       >
