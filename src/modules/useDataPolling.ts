@@ -11,7 +11,6 @@ export function useDataPolling<T>(dataProvider: () => Promise<T>, timeout: numbe
         setData(await dataProvider());
       } catch (ex) {
         showAlert({ title: 'Fetch Failure', description: ex.message });
-        console.warn(ex);
       }
       timerId = setTimeout(updateData, timeout);
     };

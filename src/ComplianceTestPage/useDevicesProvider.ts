@@ -11,7 +11,6 @@ export function useDevicesProvider(): [Domain.DeviceStatus[], () => Promise<void
       setDevices(await DeviceResource.getAll());
     } catch (ex) {
       showAlert({ title: 'Devices Fetch', description: ex.message });
-      console.warn(ex);
     }
   }, [setDevices, showAlert]);
   React.useEffect(() => {

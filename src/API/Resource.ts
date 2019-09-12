@@ -11,20 +11,27 @@ export class Resource<T> {
     this.getAll = this.getAll.bind(this);
   }
 
-  async get(id?: string): Promise<T> {
-    const resp = await fetch([this.baseURL, id].filter(Boolean).join('/'));
-    return await resp.json();
+  get(id?: string): Promise<T> {
+    return this.fetch([this.baseURL, id].filter(Boolean).join('/'));
   }
 
   async getAll(query?: string): Promise<T[]> {
-    const resp = await fetch([this.baseURL, query].filter(Boolean).join('?'));
-    const data = await resp.json();
+    const data = await this.fetch([this.baseURL, query].filter(Boolean).join('?'));
     return this.dataField ? data[this.dataField] : data;
   }
 
   async post(query?: string) {
-    const resp = await fetch([this.baseURL, query].filter(Boolean).join('?'), { method: 'POST' });
-    const data = await resp.json();
+    const data = await this.fetch([this.baseURL, query].filter(Boolean).join('?'), { method: 'POST' });
     return this.dataField ? data[this.dataField] : data;
+  }
+
+  private async fetch(input: RequestInfo, init?: RequestInit): Promise<any> {
+    try {
+      const resp = await fetch(input, init);
+      return await resp.json();
+    } catch (ex) {
+      console.warn(input, ex);
+      throw new Error(`[${input}] ${ex.message}`);
+    }
   }
 }
