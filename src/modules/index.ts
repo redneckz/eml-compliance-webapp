@@ -8,4 +8,7 @@ export { ToggleButton } from './ToggleButton';
 export { useDataPolling } from './useDataPolling';
 export { useDataProvider } from './useDataProvider';
 export { useLoader } from './useLoader';
+export { useTimer } from './useTimer';
 export { AlertManager, useAlertManager } from './AlertManager';
+export { ProgressBar } from './ProgressBar';
+export { delay } from './delay';

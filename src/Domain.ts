@@ -4,6 +4,10 @@ export interface DeviceStatus {
   RGB: string;
 }
 
+export interface TestParams {
+  WaitTime: number;
+}
+
 export enum AlertKind {
   Weather = 1,
   Fire = 2,
