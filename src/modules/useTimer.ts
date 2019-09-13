@@ -14,21 +14,26 @@ export function useTimer(
         // Do nothing
       }
       setTime(0);
-      const waitTime = await waitTimePromise;
-      const startTime = Date.now();
-      const step = () => {
-        timerId.current = setTimeout(() => {
-          const relativeTime = (Date.now() - startTime) / waitTime;
-          if (relativeTime < 1) {
-            setTime(relativeTime);
-            step();
-          } else {
-            setTime(1);
-            onEnd();
-          }
-        }, delta);
-      };
-      step();
+      try {
+        const waitTime = await waitTimePromise;
+        const startTime = Date.now();
+        const step = () => {
+          timerId.current = setTimeout(() => {
+            const relativeTime = (Date.now() - startTime) / waitTime;
+            if (relativeTime < 1) {
+              setTime(relativeTime);
+              step();
+            } else {
+              setTime(1);
+              onEnd();
+            }
+          }, delta);
+        };
+        step();
+      } catch (ex) {
+        setTime(1);
+        throw ex;
+      }
     },
     [onEnd, delta, timerId]
   );
