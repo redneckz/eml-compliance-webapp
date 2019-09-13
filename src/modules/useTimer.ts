@@ -6,13 +6,17 @@ export function useTimer(
 ): [number | undefined, (waitTimePromise: number | Promise<number>) => void] {
   const [time, setTime] = React.useState<number>();
   const timerId = React.useRef<NodeJS.Timeout>();
+  const clearTimer = () => {
+    try {
+      if (timerId.current) clearTimeout(timerId.current);
+    } catch (ex) {
+      // Do nothing
+    }
+  };
+  React.useEffect(() => clearTimer, []);
   const startTimer = React.useCallback(
     async (waitTimePromise: number | Promise<number>) => {
-      try {
-        if (timerId.current) clearTimeout(timerId.current);
-      } catch (ex) {
-        // Do nothing
-      }
+      clearTimer();
       setTime(0);
       try {
         const waitTime = await waitTimePromise;
