@@ -16,5 +16,5 @@ export function SecurityAndMotionBar() {
 }
 
 function formatMotion(motion?: Domain.MotionStatus) {
-  return motion && motion.Motion ? `Motion in ${motion.Area} ${pluralize('area')}` : 'No motion';
+  return motion && motion.Motion ? `Motion in ${motion.Motion} ${pluralize('area')}` : 'No motion';
 }
