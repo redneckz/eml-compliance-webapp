@@ -13,7 +13,7 @@ export function ToggleButton({ className, active, disabled, onClick, children }:
   return (
     <button
       className={[
-        'flex flex-no-wrap items-center justify-center',
+        'inline-block whitespace-no-wrap',
         'text-sm leading-none',
         'border rounded',
         'trans-fast',

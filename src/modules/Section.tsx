@@ -8,41 +8,36 @@ export enum SectionKind {
 interface SectionProps extends JSX.ElementChildrenAttribute {
   className?: string;
   kind: SectionKind;
-  title?: string;
+  title?: {};
+  aside?: {};
 }
 
-const SECTION_STYLES_MAP: { [key in SectionKind]: string } = {
-  [SectionKind.Primary]: 'bg-neutral text-black border-primary',
-  [SectionKind.Secondary]: 'bg-neutral text-black border-primary'
-};
-
-export function Section({ className, kind = SectionKind.Primary, title, children }: SectionProps) {
+export function Section({ className, kind = SectionKind.Primary, title, children, aside }: SectionProps) {
   return (
     <section
       className={[
-        'flex flex-no-wrap items-center',
-        'border-l-4',
-        'px-2 lg:px-4',
-        'h-12 lg:h-16',
-        SECTION_STYLES_MAP[kind],
+        'table table-fixed border-collapse',
+        'w-full h-12 lg:h-16',
+        'bg-neutral text-black',
+        'text-base leading-tight tracking-tight',
         className
       ]
         .filter(Boolean)
         .join(' ')}
-      title={title}
     >
+      <div className="table-cell w-2 lg:w-4 border-l-4 border-primary" />
       <div
         className={[
-          'flex-grow-0 flex-shrink-0',
-          'text-base tracking-tight',
-          'w-24',
-          'hidden lg:block lg:mr-2',
+          'lg:table-cell hidden align-middle',
+          'w-24 pr-2',
           kind === SectionKind.Primary ? 'font-bold' : 'font-semibold'
         ].join(' ')}
       >
         {title}
       </div>
-      <div className="flex-grow">{children}</div>
+      <div className="table-cell align-middle pr-2">{children}</div>
+      {aside ? <div className="table-cell align-middle">{aside}</div> : null}
+      <div className="table-cell w-2 lg:w-4" />
     </section>
   );
 }

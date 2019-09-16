@@ -6,8 +6,7 @@ import { ComplianceTestBar } from './ComplianceTestBar';
 import { EmergencyAudioAlertBar } from './EmergencyAudioAlertBar';
 import { SecurityAndMotionBar } from './SecurityAndMotionBar';
 import { FloorPlan } from './FloorPlan';
-import { HumiditySection } from './HumiditySection';
-import { TemperatureSection } from './TemperatureSection';
+import { AtmosphereParamSection } from './AtmosphereParamSection';
 import { useDevicesProvider } from './useDevicesProvider';
 
 const DATA_POLLING_TIMEOUT = 10 * 1000;
@@ -27,8 +26,20 @@ export function ComplianceTestPage() {
       }
       motionBar={<SecurityAndMotionBar />}
       floorPlan={<FloorPlan devices={devices || []} />}
-      humidityBar={humidity ? <HumiditySection humidity={humidity} /> : null}
-      temperatureBar={temperature ? <TemperatureSection temperature={temperature} /> : null}
+      humidityBar={
+        humidity ? (
+          <AtmosphereParamSection title="Humidity" param={humidity.Humidity} lastAnomaly={humidity.LastAnomaly} />
+        ) : null
+      }
+      temperatureBar={
+        temperature ? (
+          <AtmosphereParamSection
+            title="Temperature"
+            param={temperature.Temperature}
+            lastAnomaly={temperature.LastAnomaly}
+          />
+        ) : null
+      }
     />
   );
 }

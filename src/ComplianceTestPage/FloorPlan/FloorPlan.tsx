@@ -15,7 +15,7 @@ export function FloorPlan({ devices }: FloorPlanProps) {
   const deviceSize = floorPlan ? Math.ceil(Math.min(floorPlan.w, floorPlan.h) / DEV_SIZE_K) : undefined;
   return floorPlan ? (
     <svg viewBox={`0 0 ${floorPlan.w} ${floorPlan.h}`} className="w-full">
-      <image href={floorPlan.dataURL} x="0" y="0" />
+      <image href={floorPlan.dataURL} x="0" y="0" width={floorPlan.w} height={floorPlan.h} />
       {devices.map(dev => (
         <FloorPlanDevice key={`${dev.X}${dev.Y}`} device={dev} size={deviceSize} />
       ))}

@@ -36,9 +36,9 @@ function renderToolbar(sections: (JSX.Element | null | undefined)[]) {
   if (!visibleSections || !visibleSections.length) return <div />;
   if (visibleSections.length === 1) return <div className="w-full">{visibleSections[0]}</div>;
   return (
-    <div className="flex flex-wrap">
+    <div className="table table-fixed border-collapse w-full">
       {visibleSections.map((section, i) => (
-        <div key={i} className={`w-1/${visibleSections.length}`}>
+        <div key={i} className="table-cell align-top">
           {section}
         </div>
       ))}

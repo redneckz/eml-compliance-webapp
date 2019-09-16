@@ -23,8 +23,8 @@ export function Button({ className, kind = ButtonKind.Primary, disabled, onClick
   return (
     <button
       className={[
-        'flex flex-no-wrap items-center justify-center',
-        'text-sm',
+        'inline-block whitespace-no-wrap',
+        'text-sm leading-none tracking-tight',
         'border rounded',
         'trans-fast',
         'p-2',

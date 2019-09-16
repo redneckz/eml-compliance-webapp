@@ -9,9 +9,9 @@ export function ComplianceTestBar({ onTestSuccess }: { onTestSuccess: () => any 
   const showAlert = useAlertManager();
   const [relativeTime, startTestTimer] = useTimer(onTestSuccess);
   const testProgress = relativeTime && relativeTime * 100;
-  const run = React.useCallback(() => {
+  const run = React.useCallback(async () => {
     try {
-      startTestTimer(runTestInTime());
+      await startTestTimer(runTestInTime());
     } catch (ex) {
       showAlert({ title: 'Test Failure', description: ex.message });
     }
