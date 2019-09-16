@@ -1,21 +1,15 @@
 import * as React from 'react';
-import { Icon, Section, SectionKind, Button, ButtonKind, ProgressBar } from '../modules';
+import { Icon, Section, SectionKind, Button, ButtonKind } from '../modules';
 
 interface TestSectionProps {
-  progress?: number;
+  inProgress?: boolean;
   onTestRun: () => any;
   onReport: () => any;
 }
 
-export function ComplianceTestSection({ progress, onTestRun, onReport }: TestSectionProps) {
-  const inProgress = progress !== undefined && progress < 100;
+export function ComplianceTestSection({ inProgress, onTestRun, onReport }: TestSectionProps) {
   return (
-    <Section className="relative" title="Compliance" kind={SectionKind.Primary}>
-      {inProgress ? (
-        <div className="absolute inset-x-0" style={{ top: 'calc(100% + 1px)' }}>
-          <ProgressBar now={progress} />
-        </div>
-      ) : null}
+    <Section title="Compliance" kind={SectionKind.Primary}>
       <div className="table border-collapse">
         <div className="table-cell align-top pr-2">
           <Button kind={ButtonKind.Primary} disabled={inProgress} onClick={onTestRun}>

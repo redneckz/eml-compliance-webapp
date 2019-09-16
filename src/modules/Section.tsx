@@ -28,7 +28,7 @@ export function Section({ className, kind = SectionKind.Primary, title, children
       <div className="table-cell w-2 lg:w-4 border-l-4 border-primary" />
       <div
         className={[
-          'lg:table-cell hidden align-middle',
+          'md:table-cell hidden align-middle',
           'w-24 pr-2',
           kind === SectionKind.Primary ? 'font-bold' : 'font-semibold'
         ].join(' ')}
@@ -36,7 +36,7 @@ export function Section({ className, kind = SectionKind.Primary, title, children
         {title}
       </div>
       <div className="table-cell align-middle pr-2">{children}</div>
-      {aside ? <div className="table-cell align-middle">{aside}</div> : null}
+      {aside ? <div className="sm:table-cell hidden align-middle">{aside}</div> : null}
       <div className="table-cell w-2 lg:w-4" />
     </section>
   );
