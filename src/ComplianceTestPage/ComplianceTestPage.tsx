@@ -3,29 +3,29 @@ import { AudioAlertResource, HumidityResource, TemperatureResource } from '../AP
 import { useDataPolling } from '../modules';
 import { ComplianceTestPageLayout } from './ComplianceTestPageLayout';
 import { ComplianceTestBar } from './ComplianceTestBar';
+import { ComplianceTestProgress } from './ComplianceTestProgress';
 import { EmergencyAudioAlertBar } from './EmergencyAudioAlertBar';
 import { SecurityAndMotionBar } from './SecurityAndMotionBar';
 import { FloorPlan } from './FloorPlan';
 import { AtmosphereParamSection } from './AtmosphereParamSection';
-import { useDevicesProvider } from './useDevicesProvider';
 
 const DATA_POLLING_TIMEOUT = 10 * 1000;
 
 export function ComplianceTestPage() {
-  const [devices, fetchDevices] = useDevicesProvider();
   const alerts = useDataPolling(AudioAlertResource.getAll, DATA_POLLING_TIMEOUT);
   const humidity = useDataPolling(HumidityResource.get, DATA_POLLING_TIMEOUT);
   const temperature = useDataPolling(TemperatureResource.get, DATA_POLLING_TIMEOUT);
   return (
     <ComplianceTestPageLayout
-      testBar={<ComplianceTestBar onTestSuccess={fetchDevices} />}
+      testBar={<ComplianceTestBar />}
+      testProgress={<ComplianceTestProgress />}
       alertBar={
         alerts && alerts.length ? (
           <EmergencyAudioAlertBar alerts={(alerts || []).map(({ Number: kind }) => kind)} />
         ) : null
       }
       motionBar={<SecurityAndMotionBar />}
-      floorPlan={<FloorPlan devices={devices || []} />}
+      floorPlan={<FloorPlan />}
       humidityBar={
         humidity ? (
           <AtmosphereParamSection title="Humidity" param={humidity.Humidity} lastAnomaly={humidity.LastAnomaly} />

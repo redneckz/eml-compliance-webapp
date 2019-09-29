@@ -1,38 +1,48 @@
 import * as React from 'react';
-import { runTest } from '../API';
-import { ProgressBar, useAlertManager, useTimer } from '../modules';
+import { runTest, DeviceResource } from '../API';
+import { delay, useAlertManager, useDispatcher } from '../modules';
+import { ComplianceTestAction } from './ComplianceTestAction';
 import { ComplianceTestSection } from './ComplianceTestSection';
 
 const RUN_REPORT_URL = process.env.RUN_REPORT_URL || 'http://server.jabiliot.com/run_report';
 
-export function ComplianceTestBar({ onTestSuccess }: { onTestSuccess: () => any }) {
+interface TestBarState {
+  inProgress?: boolean;
+}
+
+const DEFAULT_STATE: TestBarState = {};
+
+function testBarReducer(state: TestBarState, { type }: ComplianceTestAction): TestBarState {
+  switch (type) {
+    case '@test/run':
+      return { inProgress: true };
+    case '@test/done':
+      return DEFAULT_STATE;
+    default:
+      return state;
+  }
+}
+
+export function ComplianceTestBar() {
+  const [state, dispatch] = React.useReducer(testBarReducer, DEFAULT_STATE);
+  const { inProgress } = state;
+  const dispatcher = useDispatcher(state, dispatch);
   const showAlert = useAlertManager();
-  const [relativeTime, startTestTimer] = useTimer(onTestSuccess);
-  const testProgress = relativeTime && relativeTime * 100;
-  const inProgress = testProgress !== undefined && testProgress < 100;
-  const run = React.useCallback(async () => {
+  const handleRun = React.useCallback(async () => {
     try {
-      await startTestTimer(runTestInTime());
+      dispatcher({ type: '@test/run' });
+      const { WaitTime } = await runTest();
+      dispatcher({ type: '@test/await', payload: WaitTime });
+      await delay(WaitTime * 1000);
+      const devices = await DeviceResource.getAll();
+      dispatcher({ type: '@test/done', payload: devices });
     } catch (ex) {
+      dispatcher({ type: '@test/done', error: true });
       showAlert({ title: 'Test Failure', description: ex.message });
     }
-  }, [startTestTimer, showAlert]);
+  }, [dispatcher, showAlert]);
   const handleReport = React.useCallback(() => {
     window.open(RUN_REPORT_URL, 'ComplianceTestReport');
   }, []);
-  return (
-    <>
-      {inProgress ? (
-        <div className="absolute inset-x-0" style={{ top: 'calc(100% + 1px)' }}>
-          <ProgressBar now={testProgress} />
-        </div>
-      ) : null}
-      <ComplianceTestSection inProgress={inProgress} onTestRun={run} onReport={handleReport} />
-    </>
-  );
-}
-
-async function runTestInTime(): Promise<number> {
-  const { WaitTime } = await runTest();
-  return WaitTime * 1000;
+  return <ComplianceTestSection inProgress={inProgress} onTestRun={handleRun} onReport={handleReport} />;
 }

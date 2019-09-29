@@ -3,9 +3,10 @@ import { PageLayout } from '../modules';
 
 interface ComplianceTestPageLayoutProps {
   testBar: JSX.Element;
+  testProgress: JSX.Element;
   alertBar?: JSX.Element | null;
-  motionBar: JSX.Element;
   floorPlan: JSX.Element;
+  motionBar: JSX.Element;
   humidityBar?: JSX.Element | null;
   temperatureBar?: JSX.Element | null;
 }
@@ -13,8 +14,9 @@ interface ComplianceTestPageLayoutProps {
 export function ComplianceTestPageLayout({
   testBar,
   alertBar,
-  motionBar,
+  testProgress,
   floorPlan,
+  motionBar,
   humidityBar,
   temperatureBar
 }: ComplianceTestPageLayoutProps) {
@@ -23,6 +25,7 @@ export function ComplianceTestPageLayout({
       header={renderToolbar([testBar, alertBar])}
       body={
         <div className="absolute inset-0 overflow-auto overflow-x-hidden border-t border-b border-primary">
+          <div className="absolute inset-x-0">{testProgress}</div>
           {floorPlan}
         </div>
       }

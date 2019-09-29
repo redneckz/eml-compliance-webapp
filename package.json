@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "1.2.0",
+    "@redneckz/react-dispatcher": "0.0.5",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.4",
     "@types/pluralize": "0.0.29",
